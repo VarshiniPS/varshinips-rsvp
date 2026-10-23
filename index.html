@@ -29,3 +29,155 @@ svg.defs{position:absolute;width:0;height:0}
 .bride{font-family:"Cormorant Garamond",Georgia,serif;font-style:normal;font-size:2.7rem;line-height:1.2;letter-spacing:.05em;margin:6px 0 8px;font-weight:600;color:#b08a33;background:linear-gradient(135deg,#9c722a,#e6c675 50%,#9c722a);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 .sub{font-family:"Cormorant Garamond",Georgia,serif;font-size:1.25rem;font-weight:500;margin:0}
 .when{display:inline-block;margin:18px 0 6px;padding:8px 20px;border-radius:999px;background:var(--pill);color:var(--pill-ink);font-weight:700;font-size:.95rem}
+.venue{display:block;margin-top:8px;color:var(--accent);font-weight:700;font-size:.95rem}
+.mdiv{display:flex;align-items:center;gap:10px;margin:24px 0;color:var(--green)}
+.mdiv::before,.mdiv::after{content:"";flex:1;border-top:1.5px dotted var(--green);opacity:.45}
+.mdiv svg{width:26px;height:26px}
+.msg{text-align:left;font-size:1rem}
+.msg p{margin:0 0 12px}.msg p:last-child{margin:0}
+h2{font-family:"Cormorant Garamond",Georgia,serif;font-size:1.75rem;font-weight:500;margin:34px 0 2px;text-align:center}
+.hint{color:var(--muted);margin:0 0 14px;text-align:center;font-size:.95rem}
+label.f{display:block;font-weight:700;margin:18px 0 6px}
+input[type=text],textarea{width:100%;font:inherit;color:var(--ink);background:var(--field);border:1.5px solid var(--line);border-radius:16px;padding:13px 15px;box-shadow:0 4px 14px rgba(190,130,100,.07)}
+input[type=text]:focus,textarea:focus{outline:3px solid var(--sel);outline-offset:1px}
+.ev{display:block;position:relative;margin:12px 0;cursor:pointer}
+.ev input{position:absolute;opacity:0}
+.ev .card{display:flex;gap:14px;align-items:center;background:var(--surface);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border:1.5px solid var(--line);border-radius:26px;padding:12px 14px;box-shadow:var(--shadow);transition:border-color .15s,background .15s}
+.ev .ic{flex:none;width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:var(--tint)}
+.ev .ic svg{width:32px;height:32px}
+.ev[data-k="pooje"]{--tint:#fbdfd4}.ev[data-k="haldi"]{--tint:#fdecb4}.ev[data-k="mehendi"]{--tint:#dfebd2}
+.ev .t{font-family:"Cormorant Garamond",Georgia,serif;font-size:1.45rem;font-weight:600;line-height:1.15}
+.ev .d{color:var(--muted);font-size:.9rem}
+.ev .tick{margin-left:auto;flex:none;width:28px;height:28px;border-radius:50%;border:1.5px solid var(--muted);display:grid;place-items:center;color:transparent;font-weight:700}
+.ev input:checked + .card{border-color:var(--green);background:color-mix(in srgb,var(--tint) 60%,var(--field))}
+.ev input:checked + .card .tick{background:var(--green);border-color:var(--green);color:#fff}
+.ev input:focus-visible + .card{outline:3px solid var(--sel);outline-offset:2px}
+.step{display:flex;align-items:center;gap:16px}
+.step button{width:46px;height:46px;border-radius:50%;border:1.5px solid var(--line);background:var(--field);color:var(--ink);font-size:1.5rem;cursor:pointer;box-shadow:0 4px 14px rgba(190,130,100,.1)}
+.step output{font-size:1.5rem;font-weight:700;min-width:2ch;text-align:center}
+.go{width:100%;margin-top:28px;padding:16px;border:0;border-radius:999px;background:var(--accent);color:var(--accent-ink);font:inherit;font-weight:700;font-size:1.05rem;cursor:pointer;box-shadow:0 10px 24px rgba(157,118,39,.28)}
+.go:focus-visible,.step button:focus-visible,.alt:focus-visible{outline:3px solid var(--sel);outline-offset:2px}
+.alt{display:block;margin:14px auto 0;background:none;border:0;color:var(--muted);text-decoration:underline;font:inherit;cursor:pointer}
+.err{color:#b3261e;font-weight:600;min-height:1.4em;margin:10px 0 0;text-align:center}
+.foot{text-align:center;color:var(--muted);font-size:.9rem;margin-top:30px}
+</style>
+</head>
+<body>
+<svg class="defs" aria-hidden="true"><defs>
+  <symbol id="mari" viewBox="-20 -20 40 40">
+    <g fill="#f4aa52"><ellipse rx="5" ry="10" cy="-9"/><ellipse rx="5" ry="10" cy="-9" transform="rotate(45)"/><ellipse rx="5" ry="10" cy="-9" transform="rotate(90)"/><ellipse rx="5" ry="10" cy="-9" transform="rotate(135)"/><ellipse rx="5" ry="10" cy="-9" transform="rotate(180)"/><ellipse rx="5" ry="10" cy="-9" transform="rotate(225)"/><ellipse rx="5" ry="10" cy="-9" transform="rotate(270)"/><ellipse rx="5" ry="10" cy="-9" transform="rotate(315)"/></g>
+    <g fill="#fcd98e"><ellipse rx="4" ry="8" cy="-7" transform="rotate(22)"/><ellipse rx="4" ry="8" cy="-7" transform="rotate(67)"/><ellipse rx="4" ry="8" cy="-7" transform="rotate(112)"/><ellipse rx="4" ry="8" cy="-7" transform="rotate(157)"/><ellipse rx="4" ry="8" cy="-7" transform="rotate(202)"/><ellipse rx="4" ry="8" cy="-7" transform="rotate(247)"/><ellipse rx="4" ry="8" cy="-7" transform="rotate(292)"/><ellipse rx="4" ry="8" cy="-7" transform="rotate(337)"/></g>
+    <circle r="4.5" fill="#dc8a44"/>
+  </symbol>
+  <symbol id="diya" viewBox="0 0 40 40"><path d="M3 21h34c0 9-7 14-17 14S3 30 3 21z" fill="#dc7f58"/><path d="M20 3c6 7 7 12 0 17-7-5-6-10 0-17z" fill="#f9d070"/><path d="M20 10c3 3 3 6 0 8-3-2-3-5 0-8z" fill="#fff3b0"/></symbol>
+  <symbol id="pais" viewBox="0 0 40 40"><path d="M22 3C34 6 38 22 28 32 20 40 8 36 7 27 6 19 15 15 19 20 22 24 18 28 15 26" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><circle cx="26" cy="17" r="2.2" fill="currentColor"/><circle cx="20" cy="30" r="1.6" fill="currentColor"/></symbol>
+</defs></svg>
+
+<main>
+  <svg class="garland" id="garland" viewBox="0 0 400 150" role="img" aria-label="Marigold garlands"></svg>
+
+  <section class="arch">
+    <svg class="diya" viewBox="0 0 40 40" aria-hidden="true"><use href="#diya"/></svg>
+    <p class="from">With love, the family of</p>
+    <h1 class="bride" id="brideName">Varshini P S</h1>
+    <p class="sub">invites you to her pre-wedding celebrations</p>
+    <p class="sub" style="color:var(--green)">Chapra Pooje · Haldi · Mehendi</p>
+    <span class="when">15th November · 8 AM onwards</span>
+    <a class="venue" href="https://maps.app.goo.gl/usHqkc7Z7VhUSXNj9" target="_blank" rel="noopener">Open venue in Maps</a>
+
+    <div class="mdiv" aria-hidden="true"><svg><use href="#pais"/></svg><svg><use href="#mari"/></svg><svg style="transform:scaleX(-1)"><use href="#pais"/></svg></div>
+
+    <div class="msg">
+      <p>Our hearts are full, and the celebrations won’t feel complete without you. You have been part of our story, and we would love to have you with us.</p>
+      <p>Come for turmeric, songs, henna and blessings, and bring your biggest smiles.</p>
+      <p>Please tell us if you can make it, so we can look after everyone.</p>
+    </div>
+  </section>
+
+  <h2>Will you join us?</h2>
+  <p class="hint">Tap every event you can attend.</p>
+  <div id="events"></div>
+
+  <label class="f" for="name">Your name</label>
+  <input type="text" id="name" autocomplete="name" placeholder="Name of the person replying">
+
+  <label class="f" id="glabel">How many people are coming, including you?</label>
+  <div class="step" role="group" aria-labelledby="glabel">
+    <button type="button" id="minus" aria-label="One fewer guest">−</button>
+    <output id="count" aria-live="polite">1</output>
+    <button type="button" id="plus" aria-label="One more guest">+</button>
+  </div>
+
+  <label class="f" for="note">A note for us (optional)</label>
+  <textarea id="note" rows="3" placeholder="Food preferences, kids, blessings…"></textarea>
+
+  <p class="err" id="err" role="alert"></p>
+  <button class="go" id="send" type="button">Send my reply on WhatsApp</button>
+  <button class="alt" id="copy" type="button">WhatsApp not opening? Copy my reply instead</button>
+
+  <p class="foot">Reception and wedding invitations are shared separately.<br>We can’t wait to celebrate with you.</p>
+</main>
+
+<script>
+const CONFIG = {
+  brideName: "Varshini P S",
+  whatsapp: "916362328291",
+  events: [
+    { id: "Chapra Pooje", k: "pooje",   icon: "diya", date: "8 AM onwards, followed by breakfast" },
+    { id: "Haldi",        k: "haldi",   icon: "mari", date: "After breakfast, followed by lunch" },
+    { id: "Mehendi",      k: "mehendi", icon: "pais", date: "After lunch" }
+  ]
+};
+const $ = id => document.getElementById(id);
+
+/* garland strands */
+(function(){
+  const lens=[3,6,4,7,5,7,4,6,3,5]; let s='<line x1="0" y1="3" x2="400" y2="3" stroke="#a3bd90" stroke-width="4"/>';
+  lens.forEach((n,i)=>{
+    const x=20+i*40, h=14+n*19;
+    s+='<line x1="'+x+'" y1="3" x2="'+x+'" y2="'+h+'" stroke="#a3bd90" stroke-width="2"/>';
+    for(let j=0;j<n;j++) s+='<use href="#mari" x="'+(x-11)+'" y="'+(10+j*19)+'" width="22" height="22"/>';
+  });
+  $("garland").innerHTML=s;
+})();
+
+const box = $("events");
+CONFIG.events.forEach(e => {
+  const l = document.createElement("label");
+  l.className = "ev"; l.dataset.k = e.k;
+  l.innerHTML = '<input type="checkbox" value="' + e.id + '"><span class="card"><span class="ic" style="color:var(--green)"><svg viewBox="0 0 40 40"><use href="#' + e.icon + '"/></svg></span><span><span class="t">' + e.id + '</span><br><span class="d">' + e.date + '</span></span><span class="tick">✓</span></span>';
+  box.appendChild(l);
+});
+
+let n = 1;
+const setN = v => { n = Math.max(1, Math.min(20, v)); $("count").textContent = n; };
+$("minus").onclick = () => setN(n - 1);
+$("plus").onclick = () => setN(n + 1);
+
+function build() {
+  const name = $("name").value.trim();
+  const picked = [...box.querySelectorAll("input:checked")].map(c => c.value);
+  if (!name) { $("err").textContent = "Please add your name."; $("name").focus(); return null; }
+  let m = "Hi! This is " + name + ".\n";
+  if (picked.length) {
+    m += "We will be joining you for: " + picked.join(", ") + ".\nTotal guests: " + n + ".";
+  } else {
+    m += "Sadly I can’t make it to the celebrations, but you will be in my thoughts and I’m sending lots of love.";
+  }
+  const note = $("note").value.trim();
+  if (note) m += "\nNote: " + note;
+  $("err").textContent = "";
+  return m;
+}
+$("send").onclick = () => {
+  const m = build(); if (!m) return;
+  window.open("https://wa.me/" + CONFIG.whatsapp + "?text=" + encodeURIComponent(m), "_blank");
+};
+$("copy").onclick = async () => {
+  const m = build(); if (!m) return;
+  try { await navigator.clipboard.writeText(m); $("err").textContent = "Copied. Paste it in a message to " + CONFIG.brideName + "."; }
+  catch (e) { $("err").textContent = "Couldn’t copy. Please type your reply to " + CONFIG.brideName + " directly."; }
+};
+</script>
+</body>
+</html>
