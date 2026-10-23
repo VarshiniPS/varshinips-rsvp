@@ -89,9 +89,9 @@ input[type=text],textarea{width:100%;font:inherit;color:var(--ink);background:#f
 .prev{background:#fff9de;border:2px dashed var(--gold);border-radius:18px;padding:14px;white-space:pre-wrap;margin:10px 0}
 .status{font-weight:600;margin:12px 0 0;color:var(--green-d)}
 .rsvp .btns{margin-top:14px}
-.close{border-radius:30px 30px 230px 230px;padding:30px 20px 40px;border-color:var(--gold)}
+.close{border-radius:30px 30px 110px 110px;padding:30px 20px 60px;border-color:var(--gold)}
 .close p{margin:10px 6px 0}
-.sig{font-family:var(--display);font-size:1.5rem;color:#b08a33;font-weight:700}
+.sig{font-family:var(--display);font-size:1.5rem;color:#b08a33;font-weight:700;max-width:100%;overflow-wrap:break-word;text-wrap:balance}
 .rv{opacity:1}
 .js .rv{opacity:0;transform:translateY(14px);transition:opacity .7s ease,transform .7s ease}
 .js .rv.in{opacity:1;transform:none}
@@ -228,7 +228,7 @@ const CONFIG = {
 };
 const $ = id => document.getElementById(id);
 $("bride").textContent = CONFIG.bride;
-$("sig").textContent = "With love, " + CONFIG.bride + " and family";
+$("sig").innerHTML = "With love, <span style=\"white-space:nowrap\"></span> and family"; $("sig").querySelector("span").textContent = CONFIG.bride;
 $("whenpill").textContent = CONFIG.dateText + " · " + CONFIG.timeText;
 $("datebig").textContent = CONFIG.dateText;
 $("timeline").textContent = CONFIG.timeText;
