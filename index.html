@@ -138,7 +138,7 @@ input[type=text],textarea{width:100%;font:inherit;color:var(--ink);background:#f
 <main>
   <header class="sec hero" id="top">
     <svg class="lotus" viewBox="0 0 80 50" aria-hidden="true"><use href="#lotus"/></svg>
-    <p class="eyebrow">With love, our family invites you to the pre-wedding celebrations of</p>
+    <p class="eyebrow" id="eyebrow">With love, our family invites you to the pre-wedding celebrations of</p>
     <h1 class="names" id="bride"></h1>
     <p class="title">Chapra Pooje · Haldi · Mehendi</p>
     <span class="when" id="whenpill"></span>
@@ -213,6 +213,7 @@ input[type=text],textarea{width:100%;font:inherit;color:var(--ink);background:#f
 /* ===== EVENT DETAILS: edit everything here ===== */
 const CONFIG = {
   bride: "Varshini P S",
+  family: "Potham Family",
   whatsapp: "916362328291",                       // international format, digits only
   mapUrl: "https://maps.app.goo.gl/usHqkc7Z7VhUSXNj9",
   dateText: "15th November",
@@ -227,8 +228,9 @@ const CONFIG = {
   ]
 };
 const $ = id => document.getElementById(id);
+$("eyebrow").textContent = "With love, the " + CONFIG.family + " invites you to the pre-wedding celebrations of";
 $("bride").textContent = CONFIG.bride;
-$("sig").innerHTML = "With love, <span style=\"white-space:nowrap\"></span> and family"; $("sig").querySelector("span").textContent = CONFIG.bride;
+$("sig").textContent = "With love, " + CONFIG.family;
 $("whenpill").textContent = CONFIG.dateText + " · " + CONFIG.timeText;
 $("datebig").textContent = CONFIG.dateText;
 $("timeline").textContent = CONFIG.timeText;
@@ -299,7 +301,7 @@ $("send").onclick=()=>{
   setTimeout(()=>{locked=false;$("send").disabled=false},5000);
 };
 $("copy").onclick=async()=>{
-  try{await navigator.clipboard.writeText(lastMsg);$("status").textContent="Copied. Paste it into a WhatsApp message to "+CONFIG.bride+"’s family."}
+  try{await navigator.clipboard.writeText(lastMsg);$("status").textContent="Copied. Paste it into a WhatsApp message to the "+CONFIG.family+"."}
   catch(e){$("status").textContent="Couldn’t copy automatically. Please select the text above and copy it."}
 };
 
